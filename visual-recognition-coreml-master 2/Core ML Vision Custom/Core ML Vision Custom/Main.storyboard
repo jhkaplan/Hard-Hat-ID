@@ -68,13 +68,24 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QGZ-b4-zCe"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oUZ-C2-qj1"/>
+                    <navigationItem key="navigationItem" id="oUZ-C2-qj1">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="mof-lK-0vh">
+                            <connections>
+                                <action selector="updateModel:" destination="MPu-h4-IWa" id="3bg-JP-7zT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ZFq-k1-ZKq">
+                            <connections>
+                                <action selector="takePicture" destination="MPu-h4-IWa" id="IgS-oB-qdN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="cameraButton" destination="DIl-Jp-qo4" id="Uda-Bb-pvW"/>
+                        <outlet property="cameraButton" destination="ZFq-k1-ZKq" id="ycm-i1-bkS"/>
                         <outlet property="currentModelLabel" destination="b2I-nz-Bpy" id="cYQ-WA-RnQ"/>
                         <outlet property="imageView" destination="OdD-Ex-jXy" id="Jfj-PQ-1B5"/>
                         <outlet property="topBarImageView" destination="4a4-N3-6E7" id="c5A-lc-aLJ"/>
-                        <outlet property="updateModelButton" destination="uCt-W1-sDm" id="VRE-M6-kkf"/>
+                        <outlet property="updateModelButton" destination="mof-lK-0vh" id="m1O-0A-jAD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igj-I4-czO" sceneMemberID="firstResponder"/>

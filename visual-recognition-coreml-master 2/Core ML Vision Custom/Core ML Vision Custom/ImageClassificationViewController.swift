@@ -25,6 +25,7 @@ class ImageClassificationViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    
 //    @IBOutlet weak var classificationLabel: UILabel!
     @IBOutlet weak var currentModelLabel: UILabel!
     @IBOutlet weak var updateModelButton: UIBarButtonItem!
