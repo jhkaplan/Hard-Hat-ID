@@ -41,6 +41,8 @@ class ImageClassificationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.shadowImage = nil
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         if !api_key.isEmpty {
             self.visualRecognition = VisualRecognition(apiKey: api_key, version: version)
         } else if !apikey.isEmpty {
@@ -150,12 +152,16 @@ class ImageClassificationViewController: UIViewController {
                     self.navigationItem.title = "Hard Hat!"
                     self.navigationController?.navigationBar.barTintColor = UIColor(red:0.49, green:0.83, blue:0.13, alpha:1.0)
                     self.navigationController?.navigationBar.isTranslucent = false
+                    self.navigationController?.navigationBar.shadowImage = nil
+                    self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
                     self.topBarImageView.image = (#imageLiteral(resourceName: "hardhat"))
                 }
                 else {
                     self.navigationItem.title = "No Hard Hat!"
                     self.navigationController?.navigationBar.barTintColor = UIColor(red:0.82, green:0.01, blue:0.11, alpha:1.0)
                     self.navigationController?.navigationBar.isTranslucent = false
+                    self.navigationController?.navigationBar.shadowImage = nil
+                    self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
                     self.topBarImageView.image = (#imageLiteral(resourceName: "nothardhat"))
                 }
                 
@@ -185,7 +191,7 @@ extension ImageClassificationViewController: UIImagePickerControllerDelegate, UI
         
         // We always expect `imagePickerController(:didFinishPickingMediaWithInfo:)` to supply the original image.
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
+//        imageView.contentMode = UIViewContentMode.scaleAspectFit
         imageView.image = image
         
         classifyImage(for: image, localThreshold: 0.2)
